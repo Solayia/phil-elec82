@@ -176,6 +176,22 @@ h1, h2, h3, h4 {
 .hero {
     background: var(--dark);
     padding: 100px 0 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-inner {
@@ -352,6 +368,14 @@ h1, h2, h3, h4 {
 
 .link-arrow:hover { opacity: 0.7; }
 
+.detail-img {
+    margin-top: 24px;
+    border-radius: var(--radius);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 /* Callout (depannage) */
 .callout {
     margin-top: 32px;
@@ -375,6 +399,95 @@ h1, h2, h3, h4 {
 }
 
 .callout-phone:hover { color: var(--blue); }
+
+/* ========== AVIS ========== */
+.avis {
+    padding: 80px 0;
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--border);
+}
+
+.avis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.avis-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+}
+
+.avis-source {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.avis-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+}
+
+.avis-score {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--heading);
+    line-height: 1;
+}
+
+.avis-stars {
+    color: #f5a623;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.avis-count {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.avis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.avis-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+}
+
+.avis-card-stars {
+    color: #f5a623;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.avis-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.avis-card strong {
+    font-size: 0.85rem;
+    color: var(--heading);
+}
+
+@media (max-width: 600px) {
+    .avis-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .avis-note { text-align: left; }
+    .avis-grid { grid-template-columns: 1fr; }
+}
 
 /* ========== CTA BAND ========== */
 .cta-band {
